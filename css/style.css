@@ -1,0 +1,374 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0 50px;
+  padding: 0;
+  font-family: "hero-new", sans-serif;
+  font-style: normal;
+  color: #000000;
+  font-weight: 200;
+  background-image: url("../images/so-white.png");
+  /* Background pattern from Toptal Subtle Patterns */
+}
+
+header {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* nav menu */
+.navbar-nav {
+  margin: auto;
+  text-transform: uppercase;
+}
+
+.nav-icons-lg a,  .nav-icons-sm a {
+  color: #000000;
+  text-decoration: none;
+}
+.nav-icons-lg a:hover,  .nav-icons-sm a:hover {
+  cursor: pointer;
+  color: #364a2e;
+}
+nav .container-fluid .nav-icons-lg span,
+.nav-icons-sm span {
+  margin-right: 1rem;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: black;
+  font-size: 1em;
+  padding: 20px 20px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  text-decoration: underline;
+  color: #364a2e;
+}
+
+.dropdown-item:hover {
+  background-color: black;
+  color: white;
+}
+
+.navbar-brand #logo {
+  width: 140px;
+}
+
+.navbar .container-fluid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav .navbar {
+  background-color: white;
+}
+
+nav .container-fluid .nav-icons-sm {
+  margin-right: 1rem;
+}
+
+.icons-wrapper {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* main content */
+.header {
+  background-image: url('http://localhost:1337/uploads/photo_1544085311_11a028465b03_29d7651dcc.jpeg');
+  min-height: 650px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: brightness(120%) drop-shadow(10px 10px 30px gray);
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 40px;
+  font-family: dolly-new, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h3 {
+  font-size: 60px;
+}
+
+h4 {
+  font-size: 30px;
+  font-family: dolly-new, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container {
+  margin: 0px;
+  padding: 0px;
+}
+
+.result-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.result {
+  background: white;
+  width: 17rem;
+  filter: drop-shadow(5px 5px 10px lightgray);
+  margin: 1em;
+  padding: 1em;
+  text-align: center;
+}
+.result img {
+  width: 15rem;
+  height: auto;
+}
+.result a {
+  color: #333;
+  text-decoration: none;
+}
+
+.result .add-cart, .product-details .add-cart, #submit {
+  border: none;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.15rem;
+  padding: 8px 25px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  background-color: #a6ad96;
+  color: black;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.result .add-cart:hover, .product-details .add-cart:hover, #submit:hover {
+  background-color: #eae6e3;
+  cursor: pointer;
+}
+.result .add-cart:active, .product-details .add-cart:active, #submit:active{
+  position: relative;
+  top: 1px;
+  background-color: transparent;
+}
+
+.card {
+  border: none;
+}
+
+.card-body {
+  text-align: center;
+  padding: 0;
+}
+
+.product-details {
+  display: inline-flex;
+  margin: 10% 0;
+}
+.product-details img {
+  filter: drop-shadow(5px 5px 10px lightgray);
+}
+.product-details__text {
+  margin-left: 3rem;
+}
+.products-container {
+  width: 100%;
+}
+.basketTotalContainer {
+  width: 100%;
+  padding: 10px 0;
+  border-top: 1px solid black;
+}
+
+.message {
+  border: 1px solid grey;
+  color: grey;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+#remove {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid black;
+  background-color: white;
+}
+
+#remove:hover {
+  background-color: transparent;
+}
+
+.message.error {
+  border-color: red;
+  color: red;
+}
+
+.message.success {
+  border-color: green;
+  color: green;
+}
+
+.loading {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin-left: 50%;
+}
+
+.loading:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #333;
+  border-color: #333 transparent #333 transparent;
+  animation: loading 1.2s linear infinite;
+}
+
+.breadcrumb {
+  background: none;
+  padding: 0;
+  margin-top: 25px;
+}
+
+ .breadcrumb a {
+  text-decoration: none;
+  color: black;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+.upload__background {
+  display: block;
+  background-color: lightgray;
+}
+
+#uploadImage {
+  display: none;
+  max-height: 200px;
+  margin: 0 auto;
+}
+
+
+/*footer*/
+footer {
+  padding: 1rem;
+  background-color: #dfcfc177;
+  min-height: 20rem;
+  text-align: center;
+}
+
+footer .btn {
+  margin-top: 0;
+  border: none;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.15rem;
+  padding: 8px 25px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  background-color: #a6ad96;
+  color: black;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+footer .btn:hover {
+  background-color: #eae6e3;
+  cursor: pointer;
+}
+.news-text {
+  border: none;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  padding: 7px;
+  font-size: 15px;
+  margin-bottom: 0.5rem;
+}
+.news-text::placeholder {
+  color: black;
+}
+.links a {
+  color: black;
+  font-size: larger;
+}
+.links p {
+  display: inline-flex;
+  padding: 1rem;
+}
+#letter {
+  width: 100px;
+}
+
+
+@keyframes loading {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+/* small screen styles*/
+@media only screen and (max-width: 992px) {
+  nav .container-fluid .nav-icons-lg {
+    display: none;
+  }
+  body {
+    margin: 0px;
+  }
+  .navbar-brand #logo {
+    width: 100px;
+  }
+  .category-section {
+    text-align: center;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  h4 {
+    font-size: 20px;
+    font-family: dolly-new, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .card {
+    width: 100%;
+    margin: auto;
+  }
+  .result-container {
+    text-align: center;
+  }
+}
+
+  /* desktop styles */
+@media only screen and (min-width: 993px) {
+  nav .container-fluid .nav-icons-sm {
+    display: none;
+  }
+}
+
+/* large screen styles */
+@media only screen and (min-width: 1600px) {
+  
+} 

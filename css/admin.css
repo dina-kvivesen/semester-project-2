@@ -1,0 +1,28 @@
+.card {
+  text-align: center;
+  border: none;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, .08);
+}
+
+.card-img-top {
+      height: 230px;
+      width: 100%;
+      object-fit: scale-down;
+      background-color: light;
+  }
+
+ .card--featured {
+      position: relative;
+      height: 230px;
+ }
+ .card--featured p {
+          position: absolute;
+          top: 10px;
+          left: 0;
+          text-align: center;
+          padding: 5px 25px;
+          background-color: #eae6e3;
+          width: 100%;
+ }
+
+ 
