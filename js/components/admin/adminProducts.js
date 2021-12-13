@@ -51,7 +51,7 @@ export function createAdminProducts(products) {
           if (featured) {
               container.innerHTML += `
               <div class="col mb-4 single__product">
-                  <div class="card" style="width: 15rem;">
+                <div class="card  h-100">
                   <div class="card--featured">
                   <a href="edit.html?id=${product.id}"><img src="${productImg}" class="card-img-top" alt="${product.title}"></a>
                   <p>Featured product</p>
