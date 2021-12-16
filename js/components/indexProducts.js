@@ -28,7 +28,7 @@ export default function createHtml(product, targetElement) {
                         <p class="card-text">${product[i].price} kr</p>
                     </div>
                     <div class="card-footer w-100">
-                        <a class="view-details-btn" href="product.html?id=${product[i].id}">View details</a>
+                        <a class="details-btn" href="product.html?id=${product[i].id}">View details</a>
                     </div>
                 </div>
             </div>

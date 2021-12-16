@@ -1,95 +1,116 @@
-import { getExistingCart } from "./components/favFunctions.js";
-import createProductHtml from "./components/allProducts.js";
-import createHtml from "./components/indexProducts.js";
+import {
+  cartItemsKey,
+  saveToStorage,
+  getFromStorage
+} from "./utils/cartStorage.js";
 import createMenu from "./components/common/createMenu.js";
 
 createMenu();
 
-const cartProducts = getExistingCart();
-const productContainer = document.querySelector(".result-container");
-const totalContainer = document.querySelector(".total-container")
+const productContainer = document.querySelector(".container__products__cart");
+const clearButton = document.querySelector("#clearCart");
+const priceContainer = document.querySelector(".container__products__cart__price");
 
-if(cartProducts.length === 0) {
+clearButton.addEventListener("click", function () {
+  window.localStorage.removeItem(cartItemsKey);
+  createCartItems(getFromStorage(cartItemsKey));
+});
+
+let priceArray = [];
+
+const cartItems = getFromStorage(cartItemsKey);
+createCartItems(cartItems);
+
+function createCartItems(products) {
+  productContainer.innerHTML = "";
+
+if(products.length === 0) {
   productContainer.innerHTML = "Your cart is empty.";
-}
-
-
-/* 
-function totalCost(product) {
-  let cartCost = localStorage.getItem('totalCost');
-
-  if (cartCost != null) {
-      cartCost = parseFloat(cartCost);
-      localStorage.setItem("totalCost", cartCost +
-      product.price);
-  } else {
-      localStorage.setItem("totalCost", product.price);
-  }
-} */
-
-
-/* cartProducts.forEach(product => {
-  totalCost(product);
-  console.log(totalCost); */
-
-
-
-
-  for (let i=0; i < cartProducts.length; i++) {
-    totalCost(cartProducts);
-    console.log(cartProducts[i].price);
-
-  function totalCost(cartProducts) {
-  let cartCost = localStorage.getItem('totalCost');
-
-    if (cartCost != null) {
-        cartCost = parseFloat(cartCost);
-        localStorage.setItem("totalCost", parseFloat(cartCost) +
-        parseFloat(cartProducts[i].price));
+  priceContainer.style.display = "none";
+} else {
+  products.forEach(function (product) {
+    const productImg = "http://localhost:1337" + product.image;
+    
+    priceArray.push(product.price);
+    let featured = "";
+    if (product.featured === null || !product.featured) {
+        featured = false;
     } else {
-        localStorage.setItem("totalCost", cartProducts[i].price);
+        featured = true;
     }
+    if (featured) {
+      productContainer.innerHTML += `
+      <div class="row no-gutters">
+          <div class="col-md-4">
+              <div class="card--featured">
+              <a href="product.html?id=${product.id}"><img src="${productImg}" class="card-img" alt="${product.title}"></a>
+              <p>Featured product</p>
+              </div>
+          </div>
+          <div class="col-md-8">
+              <div class="card-body">
+                  <h4>${product.title}</h4>
+                  <p class="card-text">${product.price} kr</p>
+                      <div>
+                          <a class="btn btn-primary" href="product.html?id=${product.id}">View details<i class="fas fa-angle-right"></i></a>
+                          <p class="btn btn-outline-dark" id="removeFromCartButton" data-id="${product.id}"><i class="far fa-trash-alt"></i> Remove</p>
+                      </div>
+              </div>
+          </div>
+      </div>
+      <hr>`;
+  } else {
+      productContainer.innerHTML += `
+<div class="row no-gutters">
+<div class="col-md-4">
+  <a href="product.html?id=${product.id}"><img src="${productImg}" class="card-img" alt="${product.title}"></a>
+</div>
+<div class="col-md-8">
+  <div class="card-body">
+      <h4>${product.title}</h4>
+      <p class="card-text">${product.price} kr</p>
+          <div>
+              <a class="btn btn-primary" href="product.html?id=${product.id}">View details<i class="fas fa-angle-right"></i></a>
+              <p class="btn btn-outline-dark" id="removeFromCartButton" data-id="${product.id}"><i class="far fa-trash-alt"></i> Remove</p>
+          </div>
+  </div>
+</div>
+</div>
+<hr>`;
   }
+});
 }
 
-  cartProducts.forEach(product => {
+const removeButtons = document.querySelectorAll("#removeFromCartButton");
+removeButtons.forEach(function (button) {
+    button.addEventListener("click", (event) => removeFromCart(event))
+});
 
-  const productImageUrl = "http://localhost:1337" + product.image;
-  console.log(productImageUrl);
-  const cartCost = localStorage.getItem('totalCost');
-  productContainer.innerHTML += `<div class="products-container">
-                                  <div class="card" style="width: 15rem;">
-                                  <img src="${productImageUrl}" alt="${product.title}" class="card-img-top">
-                                  <h4>${product.title}</h4>
-                                  <p>Price: ${product.price} kr</p>
-                                  </div>
-                                </div>
-                                
-                                <div class="basketTotalContainer">
-                                  <h4 class="basketTotalTitle">
-                                      Basket Total
-                                      </h4>
-                                      <h4 class="basketTotal">
-                                          Nok ${cartCost}
-                                      </h4>
-                                </div>`
-
-  })
-
-  
-
-function removeButton() {
-  const removeBtn = document.querySelector("#remove");
-
-  removeBtn.addEventListener("click", clearList);
-
-function clearList() {
-  if (confirm("Are you sure?")) {
-    // clear the localstorage
-    localStorage.clear();
-    // clear the list
-    productContainer.innerHTML = "";
-    }
-  }
+getTotalPrice(priceArray);
 }
-removeButton();
+
+function getTotalPrice(priceArray) {
+const containerTotalPrice = document.querySelector(".container__products__cart__price span");
+
+const totalPrice = priceArray.reduce(function (a, b) {
+    return a + b;
+}, 0)
+containerTotalPrice.innerHTML = totalPrice;
+}
+
+function removeFromCart(event) {
+const cartItems = getFromStorage(cartItemsKey);
+const id = parseInt(event.target.dataset.id);
+
+const newCartItems = cartItems.filter(function (cartItem) {
+    if (cartItem.id !== id) {
+        return true;
+    }
+});
+
+saveToStorage(cartItemsKey, newCartItems);
+priceArray = [];
+createCartItems(newCartItems);
+}
+
+

@@ -20,7 +20,7 @@
       <div class="nav-icons-sm">
         <i class="bi bi-person"></i>
         <span></span>
-        <a href="cart.html"><i class="bi bi-bag"></i><span>0</span></a>
+        <a href="cart.html"><i class="bi bi-bag"></i></a>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -55,12 +55,21 @@
   </nav>
 </header>
 <main>
-  <div class="cart-container">
+  <section class="container-cart">
     <h1>Cart</h1>
-    <button id="remove" type="button">Clear cart</button>
-    <div class="result-container"></div>
-    <div class="total-container"></div>
-  </div>
+
+    <div class="row container__products">
+      <div class="col-12 col-md-8 container__products__cart">
+        <p>Loading...</p>
+      </div>
+      <div class="col-12 col-md-4 container__products__cart__price">
+        <h5>Total price: <span>44</span> kr</h5>
+        <p class="btn btn-outline-dark" id="clearCart">
+          <i class="far fa-trash-alt"></i> Clear cart
+        </p>
+      </div>
+    </div>
+  </section>
 </main>
 <footer>
   <form action="form-success.php" method="GET">

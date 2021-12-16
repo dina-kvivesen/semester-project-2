@@ -20,9 +20,9 @@ export default function createMenu() {
         
     }
 
-        smContainer.innerHTML = `${authLink}`;
-
         lgContainer.innerHTML = `${authLink}`;
+    
+        smContainer.innerHTML = `${authLink}`;
 
         logOut();
 

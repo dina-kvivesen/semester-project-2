@@ -30,10 +30,10 @@ export function createAdminProducts(products) {
       <div class="card  h-100  single__product">
           <div class="h-100 d-flex flex-column justify-content-between">
               <div class="card-body d-flex flex-column justify-content-center">
-                  <a href="addnew.html"><i class="fas fa-plus icon--add"></i></a>
+                  <a href="addnew.html"><i class="fas fa-plus icon--add" style="color:black;"></i></a>
               </div>
               <div class="card-footer w-100">
-                  <a href="addnew.html">Add new product</a>
+                  <a class="details-btn" href="addnew.html">Add new product</a>
               </div>
           </div>
       </div>
@@ -58,11 +58,11 @@ export function createAdminProducts(products) {
                   </div>
                       <div class="d-flex flex-column justify-content-between">
                           <div class="card-body">
-                              <h5 class="card-title">${product.title}</h5>
+                              <h4>${product.title}</h4>
                               <p class="card-text">${product.price} kr</p>
                           </div>
                       <div class="card-footer w-100">
-                          <a href="edit.html?id=${product.id}">Edit</a>
+                          <a class="details-btn" href="edit.html?id=${product.id}">Edit</a>
                       </div>
                       </div>
                   </div>
@@ -75,11 +75,11 @@ export function createAdminProducts(products) {
       <a href="edit.html?id=${product.id}"><img src="${productImg}" class="card-img-top" alt="${product.title}"></a>
           <div class="d-flex flex-column justify-content-between">
               <div class="card-body">
-                  <h5 class="card-title">${product.title}</h5>
+                  <h4>${product.title}</h4>
                   <p class="card-text">${product.price} kr</p>
               </div>
           <div class="card-footer w-100">
-              <a href="edit.html?id=${product.id}">Edit</a>
+              <a class="details-btn" href="edit.html?id=${product.id}">Edit</a>
           </div>
           </div>
       </div>

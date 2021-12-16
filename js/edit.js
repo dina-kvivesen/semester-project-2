@@ -41,7 +41,7 @@ const imgPreview = document.querySelector("#uploadImage");
 
 const message = document.querySelector("#messageContainer");
 
-// Get product info
+// Get product
 async function getProduct() {
     try {
         const productsUrl = baseUrl + `products/${id}`;
@@ -56,7 +56,7 @@ async function getProduct() {
         warningMessage("alert-danger", error, ".container__products--single");
     }
 }
-// Place product info inside form
+// set product in form
 function placeProductInfo(product) {
     nameInput.value = product.title;
     priceInput.value = product.price;
@@ -67,7 +67,7 @@ function placeProductInfo(product) {
     imgPreview.src = "http://localhost:1337" + product.image.url;
 }
 
-// show image preview
+// display image 
 fileInput.onchange = () => {
     imgPreview.style.display = "none";
     const file = fileInput.files[0];
@@ -102,7 +102,7 @@ function getProductFormData(event) {
             featured: featured,
         };
 
-        // Get file data
+        // Get image data
         for (let i = 0; i < formElements.length; i++) {
             const currentElement = formElements[i];
             if (!['submit', 'file'].includes(currentElement.type)) {
@@ -126,7 +126,7 @@ function getProductFormData(event) {
     }
 }
 
-// Post new product to strapi
+// Post to strapi
 async function trySubmitProduct(data, id) {
     const token = getToken();
     const url = baseUrl + "products/" + id;
