@@ -14,7 +14,6 @@ export default async function doFetch(url) {
   try {
     const response = await fetch(productsUrl);
     const json = await response.json();
-    // console.log(json);
     return json;
   } catch(error) {
     console.log(error);

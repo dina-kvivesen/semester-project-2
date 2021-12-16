@@ -59,7 +59,7 @@ export function createAdminProducts(products) {
                       <div class="d-flex flex-column justify-content-between">
                           <div class="card-body">
                               <h5 class="card-title">${product.title}</h5>
-                              <p class="card-text">$${product.price}</p>
+                              <p class="card-text">${product.price} kr</p>
                           </div>
                       <div class="card-footer w-100">
                           <a href="edit.html?id=${product.id}">Edit</a>
@@ -76,7 +76,7 @@ export function createAdminProducts(products) {
           <div class="d-flex flex-column justify-content-between">
               <div class="card-body">
                   <h5 class="card-title">${product.title}</h5>
-                  <p class="card-text">$${product.price}</p>
+                  <p class="card-text">${product.price} kr</p>
               </div>
           <div class="card-footer w-100">
               <a href="edit.html?id=${product.id}">Edit</a>

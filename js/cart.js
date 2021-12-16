@@ -1,6 +1,6 @@
 import { getExistingCart } from "./components/favFunctions.js";
-import createProductHtml from "./components/createProductHtml.js";
-import createHtml from "./components/homepage.js";
+import createProductHtml from "./components/allProducts.js";
+import createHtml from "./components/indexProducts.js";
 import createMenu from "./components/common/createMenu.js";
 
 createMenu();

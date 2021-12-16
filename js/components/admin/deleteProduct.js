@@ -1,7 +1,7 @@
 import warningMessage from "../warningMessage.js"
 import {
     getToken
-} from "../../utils/userStorage.js";
+} from "../../utils/storage.js";
 import {
     baseUrl
 } from "../../settings/api.js"

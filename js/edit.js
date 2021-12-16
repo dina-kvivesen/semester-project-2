@@ -5,10 +5,11 @@ import {
 import {
   getToken
 } from "./utils/storage.js";
-/* import {
+import warningMessage from "./components/warningMessage.js";
+import {
   triggerDeleteProduct
 } from "./components/admin/deleteProduct.js";
- */
+ 
 
 if (!getToken()) {
   location.href = "/";
@@ -25,7 +26,7 @@ if (params.has("id")) {
     document.location.href = "index.html";
 }
 
-// triggerDeleteProduct(id);
+triggerDeleteProduct(id);
 getProduct(id);
 
 const form = document.querySelector("form");
@@ -35,7 +36,6 @@ const descriptionInput = document.querySelector("#description");
 const featuredCheck = document.querySelector("#featuredCheck");
 
 const fileInput = document.querySelector("#uploadFile");
-const fileMessage = document.querySelector(".image-warning");
 const fileLabel = document.querySelector(".custom-file-label");
 const imgPreview = document.querySelector("#uploadImage");
 
@@ -64,24 +64,18 @@ function placeProductInfo(product) {
     featuredCheck.checked = product.featured;
     fileLabel.innerHTML = product.image.name;
     imgPreview.style.display = "block";
-    imgPreview.src = "http://localhost:1337" + product.image.formats.small.url;
+    imgPreview.src = "http://localhost:1337" + product.image.url;
 }
 
-// Alert user if file is too big, and show image preview
+// show image preview
 fileInput.onchange = () => {
-    fileMessage.innerHTML = "";
     imgPreview.style.display = "none";
     const file = fileInput.files[0];
 
-    if (file.size >= 200000) {
-        fileLabel.innerHTML = "Choose image...";
-        return warningMessage("alert-warning", "File size too big", ".image-warning");
-    } else {
         fileLabel.innerHTML = file.name;
         let src = URL.createObjectURL(file);
         imgPreview.src = src;
         imgPreview.style.display = "block";
-    }
 }
 
 form.addEventListener("submit", getProductFormData)

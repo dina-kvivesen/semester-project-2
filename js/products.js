@@ -1,5 +1,5 @@
 import { baseUrl } from "./settings/api.js";
-import createProductHtml from "./components/createProductHtml.js";
+import createProductHtml from "./components/allProducts.js";
 import doFetch from "./components/getProducts.js";
 import createMenu from "./components/common/createMenu.js";
 
@@ -17,12 +17,12 @@ search.onkeyup = function (event) {
       return true;
      }
   });
-  createProductHtml(filteredProducts, '.result-container');
+  createProductHtml(filteredProducts, '.container__products');
 };
        
 async function init() {
   mainProducts = await doFetch(productsUrl);
-  createProductHtml(mainProducts, '.result-container');
+  createProductHtml(mainProducts, '.container__products');
 }
 
 init();
