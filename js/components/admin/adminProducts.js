@@ -7,7 +7,6 @@ export default async function getProducts() {
       const productsUrl = baseUrl + "products";
       const response = await fetch(productsUrl);
       const products = await response.json();
-      console.log(products);
 
       createAdminProducts(products);
 

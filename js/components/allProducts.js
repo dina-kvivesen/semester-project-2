@@ -5,7 +5,6 @@ export default function createProductHtml(product, targetElement) {
     
 
     for (let i = 0; i < product.length; i++) {
-        console.log(product);
 
         const productImageUrl = "http://localhost:1337" + product[i].image.url;
 

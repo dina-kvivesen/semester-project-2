@@ -1,0 +1,110 @@
+body {
+  font-family: "hero-new", sans-serif;
+  font-style: normal;
+  color: #000000;
+  font-weight: 200;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 40px;
+  font-family: dolly-new, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 35px;
+  font-family: dolly-new, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 25px;
+  font-family: dolly-new, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.header-caption__title {
+  color: lightgray;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+
+.navbar-nav {
+  text-transform: uppercase;
+}
+
+.details-btn {
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+footer .btn {
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.15rem;
+}
+
+.product-details .add-cart, #submit, #to-shop, .login-btn{
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.15rem;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: black;
+  font-size: 1em;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  text-decoration: underline;
+  color: $green;
+}
+
+.dropdown-item:hover {
+  background-color: $greenHoverLink;
+}
+
+
+.news-text {
+  font-size: 15px;
+}
+
+/* small screen styles*/
+@media only screen and (max-width: 992px) {
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+}

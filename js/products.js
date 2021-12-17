@@ -15,7 +15,9 @@ search.onkeyup = function (event) {
   const filteredProducts = mainProducts.filter(function(filterProduct) {
     if(filterProduct.title.toLowerCase().startsWith(searchValue)) {
       return true;
-     }
+     } else if (filterProduct.description && filterProduct.description.toLowerCase().includes(searchValue)) {
+      return true;
+  }
   });
   createProductHtml(filteredProducts, '.container__products');
 };

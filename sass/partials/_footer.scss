@@ -1,0 +1,43 @@
+/*footer*/
+footer {
+  padding: 1rem;
+  background-color: #dfcfc177;
+  min-height: 20rem;
+  text-align: center;
+}
+
+footer .btn {
+  margin-top: 0;
+  border: none;
+  padding: 8px 25px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  background-color: #a6ad96;
+  color: black;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+footer .btn:hover {
+  background-color: #eae6e3;
+  cursor: pointer;
+}
+.news-text {
+  border: none;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  padding: 7px;
+  margin-bottom: 0.5rem;
+}
+.news-text::placeholder {
+  color: black;
+}
+.links a {
+  color: black;
+  font-size: larger;
+}
+.links p {
+  display: inline-flex;
+  padding: 1rem;
+}
+#letter {
+  width: 100px;
+}

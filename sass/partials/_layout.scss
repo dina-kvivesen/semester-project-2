@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/so-white.png");
+  /* Background pattern from Toptal Subtle Patterns */
+}
+
+header {
+  margin: 0 1rem;
+  padding: 0px;
+}
+
+main {
+  margin: 1rem;
+}
+
+.container-cart {
+  min-height: 500px;
+}
+
+.container {
+  margin: 2rem 0 0 0;
+  padding: 0px;
+}
+
+.container-index {
+  margin: 2rem 0 0 0;
+  padding: 2.5rem 1rem 1rem 1rem;
+}
+
+.header-caption {
+  position: absolute;
+  z-index: 100;
+  top: 40%;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+

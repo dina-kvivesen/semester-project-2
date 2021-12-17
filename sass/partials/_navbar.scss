@@ -1,0 +1,76 @@
+.navbar-nav {
+  margin: auto;
+}
+
+.nav-icons-lg a,  .nav-icons-sm a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.nav-icons-lg a:hover,  .nav-icons-sm a:hover {
+  color: $green;
+  cursor: pointer;
+}
+
+nav .container-fluid .nav-icons-lg span,
+.nav-icons-sm span {
+  margin-right: 1rem;
+}
+
+.navbar-nav .nav-item .nav-link {
+  padding: 20px 20px; 
+}
+
+.navbar-brand #logo {
+  width: 140px;
+}
+
+.navbar .container-fluid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav .navbar {
+  background-color: white;
+}
+
+nav .container-fluid .nav-icons-sm {
+  margin-right: 1rem;
+}
+
+.icons-wrapper {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* small screen styles*/
+@media only screen and (max-width: 992px) {
+  nav .container-fluid .nav-icons-lg {
+    display: none;
+  }
+  
+  .navbar-brand #logo {
+    width: 100px;
+  }
+
+}
+
+  /* desktop styles */
+@media only screen and (min-width: 993px) {
+  nav .container-fluid #icon {
+    display: none;
+  }
+
+  .nav-icons-sm {
+    position: absolute;
+    right: 1rem;
+  } 
+
+  
+
+}

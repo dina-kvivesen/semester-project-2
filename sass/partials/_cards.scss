@@ -4,6 +4,26 @@
   box-shadow: 0 2px 16px 0 rgba(0, 0, 0, .08);
 }
 
+.card-footer:hover {
+  background-color: #eae6e3;
+  transition: all 0.5s ease;
+}
+
+.card-imagecontainer {
+  height: 250px;
+ }
+
+ .card-body {
+  text-align: center;
+  padding: 0;
+  padding-top: 2rem;
+}
+.card {
+  text-align: center;
+  border: none;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, .08);
+}
+
 .card-img-top {
       height: 230px;
       width: 100%;
@@ -24,4 +44,12 @@
           width: 100%;
  }
 
- 
+/* small screen styles*/
+@media only screen and (max-width: 992px) {
+
+  .card {
+    width: 100%;
+    margin: auto;
+  }
+
+}

@@ -43,7 +43,7 @@ if(products.length === 0) {
       <div class="row no-gutters">
           <div class="col-md-4">
               <div class="card--featured">
-              <a href="product.html?id=${product.id}"><img src="${productImg}" class="card-img" alt="${product.title}"></a>
+              <a href="product.html?id=${product.id}"><img src="${productImg}" class="card-img-top" alt="${product.title}"></a>
               <p>Featured product</p>
               </div>
           </div>
@@ -51,10 +51,10 @@ if(products.length === 0) {
               <div class="card-body">
                   <h4>${product.title}</h4>
                   <p class="card-text">${product.price} kr</p>
-                      <div>
-                          <a class="btn btn-primary" href="product.html?id=${product.id}">View details<i class="fas fa-angle-right"></i></a>
-                          <p class="btn btn-outline-dark" id="removeFromCartButton" data-id="${product.id}"><i class="far fa-trash-alt"></i> Remove</p>
-                      </div>
+                  <div>
+                      <a class="details-btn"" href="product.html?id=${product.id}">View details <i class="fas fa-angle-right"></i></a>
+                      <p class="btn btn-outline-dark" id="removeFromCartButton" data-id="${product.id}"><i class="far fa-trash-alt"></i> Remove</p>
+                  </div>
               </div>
           </div>
       </div>
@@ -63,14 +63,14 @@ if(products.length === 0) {
       productContainer.innerHTML += `
 <div class="row no-gutters">
 <div class="col-md-4">
-  <a href="product.html?id=${product.id}"><img src="${productImg}" class="card-img" alt="${product.title}"></a>
+  <a href="product.html?id=${product.id}"><img src="${productImg}" class="card-img-top" alt="${product.title}"></a>
 </div>
 <div class="col-md-8">
   <div class="card-body">
       <h4>${product.title}</h4>
       <p class="card-text">${product.price} kr</p>
           <div>
-              <a class="btn btn-primary" href="product.html?id=${product.id}">View details<i class="fas fa-angle-right"></i></a>
+              <a class="details-btn" href="product.html?id=${product.id}">View details <i class="fas fa-angle-right"></i></a>
               <p class="btn btn-outline-dark" id="removeFromCartButton" data-id="${product.id}"><i class="far fa-trash-alt"></i> Remove</p>
           </div>
   </div>
