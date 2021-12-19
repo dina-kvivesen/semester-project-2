@@ -5,6 +5,10 @@ import {
 } from "./utils/storage.js";
 import getProducts from "./components/admin/adminProducts.js";
 
+if (!getToken()) {
+  location.href = "/";
+}
+
 getProducts();
 createMenu();
 const username = getUsername();

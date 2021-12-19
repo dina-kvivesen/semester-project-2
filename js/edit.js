@@ -9,7 +9,6 @@ import warningMessage from "./components/warningMessage.js";
 import {
   toggleDeleteProduct
 } from "./components/admin/deleteProduct.js";
- 
 
 if (!getToken()) {
   location.href = "/";
