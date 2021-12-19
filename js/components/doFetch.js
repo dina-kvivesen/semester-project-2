@@ -10,7 +10,7 @@ const id = params.get("id");
 
 const productsUrl = baseUrl + "products/";
 
-export default async function doFetch(url) {
+export default async function doFetch() {
   try {
     const response = await fetch(productsUrl);
     const json = await response.json();

@@ -78,10 +78,6 @@ footer .btn {
   color: #364a2e;
 }
 
-.dropdown-item:hover {
-  background-color: #a6ad96;
-}
-
 .news-text {
   font-size: 15px;
 }
@@ -125,8 +121,8 @@ nav .container-fluid .nav-icons-lg span,
   padding: 20px 20px;
 }
 
-.navbar-brand #logo {
-  width: 140px;
+.container-fluid .navbar-brand img {
+  width: 100px;
 }
 
 .navbar .container-fluid {
@@ -157,8 +153,9 @@ nav .container-fluid .nav-icons-sm {
   nav .container-fluid .nav-icons-lg {
     display: none;
   }
-  .navbar-brand #logo {
-    width: 100px;
+  .container-fluid .navbar-brand img {
+    width: 80px;
+    height: auto;
   }
 }
 
@@ -255,6 +252,14 @@ main {
   width: 100%;
 }
 
+/* small screen styles*/
+@media only screen and (max-width: 992px) {
+  #logout {
+    height: 30px;
+    font-size: 0.7rem;
+  }
+}
+
 .breadcrumb {
   background: none;
   padding: 0;
@@ -272,12 +277,11 @@ main {
 }
 
 .result-container {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 100%;
 }
 
 .result {
@@ -298,10 +302,12 @@ main {
 }
 
 .product-details {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  margin: 5% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 2rem 0;
 }
 
 .product-details img {
@@ -310,11 +316,20 @@ main {
 }
 
 .product-details__text {
-  margin-left: 3rem;
+  max-width: 400px;
+  margin: 0 2rem;
+}
+
+.product-details img {
+  max-width: 500px;
 }
 
 .products-container {
   width: 100%;
+}
+
+.img-container {
+  margin-bottom: 0;
 }
 
 .upload__background {
@@ -332,6 +347,16 @@ main {
 @media only screen and (max-width: 992px) {
   .result-container {
     text-align: center;
+  }
+  .img-container {
+    max-width: 100%;
+  }
+  .product-details img {
+    max-width: 100%;
+  }
+  .product-details__text {
+    max-width: 400px;
+    margin: 2rem auto;
   }
 }
 
@@ -374,7 +399,6 @@ main {
 
 .card--featured {
   position: relative;
-  height: 230px;
 }
 
 .card--featured p {
@@ -563,7 +587,7 @@ label {
   padding: 0.4rem;
 }
 
-.container {
-  margin: auto;
+.container-login {
+  margin: 6rem auto;
 }
 /*# sourceMappingURL=styles.css.map */

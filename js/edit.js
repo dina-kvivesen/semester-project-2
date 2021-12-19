@@ -7,7 +7,7 @@ import {
 } from "./utils/storage.js";
 import warningMessage from "./components/warningMessage.js";
 import {
-  triggerDeleteProduct
+  toggleDeleteProduct
 } from "./components/admin/deleteProduct.js";
  
 
@@ -26,7 +26,7 @@ if (params.has("id")) {
     document.location.href = "index.html";
 }
 
-triggerDeleteProduct(id);
+toggleDeleteProduct(id);
 getProduct(id);
 
 const form = document.querySelector("form");
@@ -37,7 +37,7 @@ const featuredCheck = document.querySelector("#featuredCheck");
 
 const fileInput = document.querySelector("#uploadFile");
 const fileLabel = document.querySelector(".custom-file-label");
-const imgPreview = document.querySelector("#uploadImage");
+const imgDisplay = document.querySelector("#uploadImage");
 
 const message = document.querySelector("#messageContainer");
 
@@ -48,7 +48,7 @@ async function getProduct() {
         const response = await fetch(productsUrl);
         const product = await response.json();
 
-        placeProductInfo(product);
+        placeProductDetails(product);
 
     } catch (error) {
         console.log(error);
@@ -57,25 +57,25 @@ async function getProduct() {
     }
 }
 // set product in form
-function placeProductInfo(product) {
+function placeProductDetails(product) {
     nameInput.value = product.title;
     priceInput.value = product.price;
     descriptionInput.value = product.description;
     featuredCheck.checked = product.featured;
     fileLabel.innerHTML = product.image.name;
-    imgPreview.style.display = "block";
-    imgPreview.src = "http://localhost:1337" + product.image.url;
+    imgDisplay.style.display = "block";
+    imgDisplay.src = "http://localhost:1337" + product.image.url;
 }
 
 // display image 
 fileInput.onchange = () => {
-    imgPreview.style.display = "none";
+    imgDisplay.style.display = "none";
     const file = fileInput.files[0];
 
         fileLabel.innerHTML = file.name;
         let src = URL.createObjectURL(file);
-        imgPreview.src = src;
-        imgPreview.style.display = "block";
+        imgDisplay.src = src;
+        imgDisplay.style.display = "block";
 }
 
 form.addEventListener("submit", getProductFormData)
@@ -122,12 +122,12 @@ function getProductFormData(event) {
 
         formData.append('data', JSON.stringify(data));
 
-        trySubmitProduct(formData, id);
+        SubmitProduct(formData, id);
     }
 }
 
 // Post to strapi
-async function trySubmitProduct(data, id) {
+async function SubmitProduct(data, id) {
     const token = getToken();
     const url = baseUrl + "products/" + id;
 
@@ -146,7 +146,7 @@ async function trySubmitProduct(data, id) {
 
         if (json.updated_at) {
             submit.innerHTML = `Product added <i class="fas fa-check"></i>`;
-            imgPreview.style.display = "none";
+            imgDisplay.style.display = "none";
             fileLabel.innerHTML = "Choose image..."
             form.reset();
             return warningMessage("alert-success", "Product edited successfully", "#messageContainer");

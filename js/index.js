@@ -1,6 +1,6 @@
 import { baseUrl } from "./settings/api.js";
-import createHtml from "./components/indexProducts.js";
-import doFetch from "./components/getProducts.js";
+import getIndexProducts from "./components/indexProducts.js";
+import doFetch from "./components/doFetch.js";
 import createMenu from "./components/common/createMenu.js";
 
 createMenu();
@@ -11,7 +11,7 @@ let mainProducts = [];
 
 async function init() {
   mainProducts = await doFetch(productsUrl);
-  createHtml(mainProducts, '.container__products');
+  getIndexProducts(mainProducts, '.container__products');
 }
 
 init();

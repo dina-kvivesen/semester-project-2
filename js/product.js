@@ -3,7 +3,7 @@ import {
     cartItemsKey,
     saveToStorage,
     getFromStorage
-} from "./utils/cartStorage.js";
+} from "./utils/storage.js";
 import displayMessage from "./components/displayMessage.js";
 import createMenu from "./components/common/createMenu.js";
 
@@ -19,12 +19,12 @@ if (params.has("id")) {
     document.location.href = "index.html";
 }
 
-async function getSingleProduct() {
+async function getProduct() {
     try {
         const productsUrl = baseUrl + `products?id=${id}`;
         const response = await fetch(productsUrl);
         const product = await response.json();
-        createSingleProduct(product);
+        createProduct(product);
         isItemInCart(product);
         addToCart(product);
     } catch (error) {
@@ -33,14 +33,14 @@ async function getSingleProduct() {
 }
 }
 
-getSingleProduct();
+getProduct();
 
-function createSingleProduct(products) {
-    let buttonText = "";
+function createProduct(products) {
+    let buttonContent = "";
     if (isItemInCart(products)) {
-        buttonText = "Remove from cart";
+        buttonContent = "Remove from cart";
     } else {
-        buttonText = "Add to cart";
+        buttonContent = "Add to cart";
     }
 
     const container = document.querySelector(".result-container");
@@ -48,7 +48,6 @@ function createSingleProduct(products) {
     let featured = "";
 
     products.forEach(function (product) {
-        console.log(product);
         document.title = "Bergen Shoes | " + product.title;
         if (product.featured === null || !product.featured) {
             featured = "";
@@ -61,16 +60,17 @@ function createSingleProduct(products) {
 
         container.innerHTML += `
             <div class="product-details">
-            <div class="img-container" >
-            <img src="${productImg}" style="width: 500px" alt="${product.title} shoe">
-            ${featured}
-            </div>
-            <div class="product-details__text">
-            <h4>${product.title}</h4>
-            <p>${product.price} kr</p>
-            <p>${product.description}</p>
-            <a class="add-cart" id="addToCartButton">${buttonText}</a>
-        </div>`;
+                <div class="img-container" >
+                    <img src="${productImg}" alt="${product.title} shoe">
+                    ${featured}
+                </div>
+                <div class="product-details__text">
+                    <h4>${product.title}</h4>
+                    <p>${product.price} kr</p>
+                    <p>${product.description}</p>
+                    <a class="add-cart" id="addToCartBtn">${buttonContent}</a>
+                </div>
+            </div>`;
         const breadcrumb = document.querySelector(".breadcrumb-item.active");
         breadcrumb.innerHTML = `${product.title}`;
     });
@@ -94,7 +94,7 @@ function isItemInCart(product) {
 }
 
 function addToCart(product) {
-    const button = document.querySelector("#addToCartButton");
+    const button = document.querySelector("#addToCartBtn");
 
     const id = product[0].id;
     let productImg = "";
@@ -128,80 +128,3 @@ function addToCart(product) {
         }
     })
 }
-
-
-/* function createHtml(product, targetElement) {
-    const element = document.querySelector(targetElement);
-    
-    element.innerHTML = "";
-   
-    const cart = getExistingCart();
-        
-        cart.find(function(cartProduct) {
-
-            return parseInt(cartProduct.id) === product.id;
-        })
-
-        const productImageUrl = "http://localhost:1337" + product.image.url;
-
-          
-        element.innerHTML += `<div class="product-details">
-                                <div class="img-container" >
-                                  <img src="${productImageUrl}" alt="${product.title}" style="width: 500px">
-                                </div>
-                                <div class="product-details__text">
-                                  <h4 class="card-title">${product.title}</h4>
-                                  <p>${product.price} kr</p>
-                                  <p>${product.description}</p>
-                                  <button class="add-cart"><i class="bi bi-bag" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-image="${product.image.url}"> Add to cart</i></button>
-                                </div>
-                             </div>`;
-
-        const breadcrumb = document.querySelector(".breadcrumb-item.active");
-        breadcrumb.innerHTML = `${product.title}`;
-                            
-    
-const cartButtons = document.querySelectorAll(".product-details .add-cart");
-
-cartButtons.forEach((button) => {
-    button.onclick = addToCart;
-});
-
-function addToCart(event) {
-
-    const id = event.target.dataset.id;
-    const title = event.target.dataset.title;
-    const price = event.target.dataset.price;
-    const image = event.target.dataset.image;
-
-    const currentCart = getExistingCart();
-
-    const productExists = currentCart.find(function(cartProduct) {
-        return cartProduct.id === id;
-    });
-
-    if(!productExists) {
-        const product = { id: id, title: title, price: price, image: image};
-        currentCart.push(product);
-        saveCart(currentCart);
-    } else {
-        const newCart = currentCart.filter(cartProduct => cartProduct.id !== id);
-        saveCart(newCart);
-    }
-}
-function saveCart(cartProducts) {
-    localStorage.setItem("cart", JSON.stringify(cartProducts));
-}
-}
-
-const productsUrl = baseUrl + "products/";
-
-let mainProducts = [];
-
-       
-async function init() {
-  mainProducts = await doFetch(productsUrl);
-  createHtml(mainProducts, '.result-container');
-}
-
-init(); */

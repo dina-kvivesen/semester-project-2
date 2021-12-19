@@ -1,4 +1,4 @@
-export default function createHtml(product, targetElement) {
+export default function getIndexProducts(product, targetElement) {
     const element = document.querySelector(targetElement);
 
     element.innerHTML = "";

@@ -9,18 +9,19 @@ export function saveUser(user) {
     saveToStorage(userKey, user);
 }
 
-function saveToStorage(key, value) {
-    localStorage.setItem(key, JSON.stringify(value));
+export const cartItemsKey = "cart items";
+
+export function saveToStorage(key, items) {
+    localStorage.setItem(key, JSON.stringify(items));
 }
 
-function getFromStorage(key) {
-  const value = localStorage.getItem(key);
+export function getFromStorage(key) {
+    const items = localStorage.getItem(key);
 
-    if (!value) {
+    if (!items) {
         return [];
     }
-
-    return JSON.parse(value);
+    return JSON.parse(items);
 }
 
 export function getToken() {

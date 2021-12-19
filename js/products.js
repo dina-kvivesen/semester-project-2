@@ -1,6 +1,6 @@
 import { baseUrl } from "./settings/api.js";
-import createProductHtml from "./components/allProducts.js";
-import doFetch from "./components/getProducts.js";
+import allProducts from "./components/allProducts.js";
+import doFetch from "./components/doFetch.js";
 import createMenu from "./components/common/createMenu.js";
 
 createMenu();
@@ -19,12 +19,12 @@ search.onkeyup = function (event) {
       return true;
   }
   });
-  createProductHtml(filteredProducts, '.container__products');
+  allProducts(filteredProducts, '.container__products');
 };
        
 async function init() {
   mainProducts = await doFetch(productsUrl);
-  createProductHtml(mainProducts, '.container__products');
+  allProducts(mainProducts, '.container__products');
 }
 
 init();

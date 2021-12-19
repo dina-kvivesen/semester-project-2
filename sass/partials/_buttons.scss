@@ -8,18 +8,18 @@
   color: black;
 }
 
-.product-details .add-cart, #submit, #to-shop, .login-btn{
+.product-details .add-cart, #submit, #to-shop, .login-btn {
   border: none;
   padding: 8px 25px;
   border-radius: 5px;
   transition: all 0.5s ease;
-  background-color: #a6ad96;
+  background-color: $lightGreen;
   color: black;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .product-details .add-cart:hover, #submit:hover, #to-shop:hover, .login-btn:hover {
-  background-color: #eae6e3;
+  background-color: $buttonBeige;
   cursor: pointer;
 }
 
@@ -31,4 +31,14 @@
 
 .login-btn {
   width: 100%;
+}
+
+/* small screen styles*/
+@media only screen and (max-width: 992px) {
+
+  #logout {
+    height: 30px;
+    font-size: 0.7rem;
+  }
+
 }

@@ -2,26 +2,26 @@ import {
   cartItemsKey,
   saveToStorage,
   getFromStorage
-} from "./utils/cartStorage.js";
+} from "./utils/storage.js";
 import createMenu from "./components/common/createMenu.js";
 
 createMenu();
 
 const productContainer = document.querySelector(".container__products__cart");
-const clearButton = document.querySelector("#clearCart");
+const clearBtn = document.querySelector("#clearCart");
 const priceContainer = document.querySelector(".container__products__cart__price");
 
-clearButton.addEventListener("click", function () {
+clearBtn.addEventListener("click", function () {
   window.localStorage.removeItem(cartItemsKey);
-  createCartItems(getFromStorage(cartItemsKey));
+  displayCart(getFromStorage(cartItemsKey));
 });
 
 let priceArray = [];
 
 const cartItems = getFromStorage(cartItemsKey);
-createCartItems(cartItems);
+displayCart(cartItems);
 
-function createCartItems(products) {
+function displayCart(products) {
   productContainer.innerHTML = "";
 
 if(products.length === 0) {
@@ -53,7 +53,7 @@ if(products.length === 0) {
                   <p class="card-text">${product.price} kr</p>
                   <div>
                       <a class="details-btn"" href="product.html?id=${product.id}">View details <i class="fas fa-angle-right"></i></a>
-                      <p class="btn btn-outline-dark" id="removeFromCartButton" data-id="${product.id}"><i class="far fa-trash-alt"></i> Remove</p>
+                      <p class="btn btn-outline-dark" id="removeBtn" data-id="${product.id}"><i class="far fa-trash-alt"></i> Remove</p>
                   </div>
               </div>
           </div>
@@ -71,7 +71,7 @@ if(products.length === 0) {
       <p class="card-text">${product.price} kr</p>
           <div>
               <a class="details-btn" href="product.html?id=${product.id}">View details <i class="fas fa-angle-right"></i></a>
-              <p class="btn btn-outline-dark" id="removeFromCartButton" data-id="${product.id}"><i class="far fa-trash-alt"></i> Remove</p>
+              <p class="btn btn-outline-dark" id="removeBtn" data-id="${product.id}"><i class="far fa-trash-alt"></i> Remove</p>
           </div>
   </div>
 </div>
@@ -81,15 +81,15 @@ if(products.length === 0) {
 });
 }
 
-const removeButtons = document.querySelectorAll("#removeFromCartButton");
-removeButtons.forEach(function (button) {
-    button.addEventListener("click", (event) => removeFromCart(event))
+const removeBtns = document.querySelectorAll("#removeBtn");
+removeBtns.forEach(function (btn) {
+    btn.addEventListener("click", (event) => removeFromCart(event))
 });
 
-getTotalPrice(priceArray);
+getTotalCost(priceArray);
 }
 
-function getTotalPrice(priceArray) {
+function getTotalCost(priceArray) {
 const containerTotalPrice = document.querySelector(".container__products__cart__price span");
 
 const totalPrice = priceArray.reduce(function (a, b) {
@@ -110,7 +110,7 @@ const newCartItems = cartItems.filter(function (cartItem) {
 
 saveToStorage(cartItemsKey, newCartItems);
 priceArray = [];
-createCartItems(newCartItems);
+displayCart(newCartItems);
 }
 
 

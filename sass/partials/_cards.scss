@@ -5,7 +5,7 @@
 }
 
 .card-footer:hover {
-  background-color: #eae6e3;
+  background-color: $buttonBeige;
   transition: all 0.5s ease;
 }
 
@@ -32,7 +32,6 @@
 
  .card--featured {
       position: relative;
-      height: 230px;
  }
  .card--featured p {
           position: absolute;
@@ -40,7 +39,7 @@
           left: 0;
           text-align: center;
           padding: 5px 25px;
-          background-color: #eae6e3;
+          background-color: $buttonBeige;
           width: 100%;
  }
 

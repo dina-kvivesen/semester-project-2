@@ -21,27 +21,25 @@ const featuredCheck = document.querySelector("#featuredCheck");
 
 const fileInput = document.querySelector("#uploadFile");
 const fileLabel = document.querySelector(".custom-file-label");
-const imgPreview = document.querySelector("#uploadImage");
+const imgDisplay = document.querySelector("#uploadImage");
 
 const message = document.querySelector("#messageContainer");
 
-
-// display image
 fileInput.onchange = () => {
-    imgPreview.style.display = "none";
+    imgDisplay.style.display = "none";
     const file = fileInput.files[0];
 
     
         fileLabel.innerHTML = file.name;
         let src = URL.createObjectURL(file);
-        imgPreview.src = src;
-        imgPreview.style.display = "block";
+        imgDisplay.src = src;
+        imgDisplay.style.display = "block";
     
 }
 
-form.addEventListener("submit", getProductFormData)
+form.addEventListener("submit", getProductData)
 
-function getProductFormData(event) {
+function getProductData(event) {
     event.preventDefault();
     message.innerHTML = "";
     const formData = new FormData();
@@ -76,19 +74,19 @@ function getProductFormData(event) {
                     for (let i = 0; i < currentElement.files.length; i++) {
                         const file = currentElement.files[i];
                         formData.append(`files.${currentElement.name}`, file, file.name);
-                    }
+                    } 
                 }
             }
         }
         // Add other data to formData 
         formData.append('data', JSON.stringify(data));
 
-        trySubmitProduct(formData);
+        SubmitProduct(formData);
     }
 }
 
 // Post to strapi
-async function trySubmitProduct(data) {
+async function SubmitProduct(data) {
     const url = baseUrl + "products";
     const token = getToken();
 
@@ -106,11 +104,11 @@ async function trySubmitProduct(data) {
         const json = await response.json();
 
         if (json.created_at) {
-            submit.innerHTML = `Product added <i class="fas fa-check"></i>`;
-            imgPreview.style.display = "none";
+            submit.innerHTML = `Product added`;
+            imgDisplay.style.display = "none";
             fileLabel.innerHTML = "Choose image..."
             form.reset();
-            return warningMessage("alert-success", "Product added successfully", "#messageContainer");
+            return warningMessage("alert-success", "New product has been added", "#messageContainer");
         }
 
         if (json.error) {

@@ -21,8 +21,8 @@ nav .container-fluid .nav-icons-lg span,
   padding: 20px 20px; 
 }
 
-.navbar-brand #logo {
-  width: 140px;
+.container-fluid .navbar-brand img {
+  width: 100px;
 }
 
 .navbar .container-fluid {
@@ -54,8 +54,9 @@ nav .container-fluid .nav-icons-sm {
     display: none;
   }
   
-  .navbar-brand #logo {
-    width: 100px;
+  .container-fluid .navbar-brand img {
+    width: 80px;
+    height: auto;
   }
 
 }

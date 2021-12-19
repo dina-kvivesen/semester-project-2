@@ -1,4 +1,4 @@
-export default function createProductHtml(product, targetElement) {
+export default function allProducts(product, targetElement) {
     const element = document.querySelector(targetElement);
 
     element.innerHTML = "";
