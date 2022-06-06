@@ -1,3 +1,4 @@
+Bergen Shoes
 <img width="681" alt="Skjermbilde 2022-06-06 kl  19 20 58" src="https://user-images.githubusercontent.com/71272716/172215198-5a91a45e-28b6-435d-a746-8482339ff962.png">
 
 
