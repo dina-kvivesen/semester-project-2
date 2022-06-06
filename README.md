@@ -1,5 +1,5 @@
+<img width="1097" alt="Skjermbilde 2022-06-06 kl  19 20 58" src="https://user-images.githubusercontent.com/71272716/172214405-9d296bd5-8fb3-42d1-9f9f-ecb1b5c0c939.png">
 
-<img width="1097" alt="Skjermbilde 2022-06-06 kl  19 20 58" src="https://user-images.githubusercontent.com/71272716/172212802-4f225460-cae8-454f-9115-4ed998bac453.png">
 
 
 Goal
