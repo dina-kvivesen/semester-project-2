@@ -33,6 +33,7 @@ User credentials
 email: admin@admin.com
 
 username: admin
+
 password: Pass1234
 
 3. To run the project install [live server]([https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer]) (Example in VS Code):
