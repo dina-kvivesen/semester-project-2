@@ -25,17 +25,17 @@ git clone https://github.com/dina-kvivesen/semester-project-2.git
 ```
 2. The Strapi project needs to run locally in the background. It can be found [here](https://github.com/NoroffFEU/strapi-sp2)
 
-Run the commands below:
-```
-npm install npm run develop
-```
-User credentials
+      Run the commands below:
+      ```
+      npm install npm run develop
+      ```
+      User credentials
 
-email: admin@admin.com
+      email: admin@admin.com
 
-username: admin
+      username: admin
 
-password: Pass1234
+      password: Pass1234
 
 3. To run the project install [live server]([https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer]) (Example in VS Code):
 
