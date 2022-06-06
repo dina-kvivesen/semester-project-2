@@ -37,7 +37,7 @@ git clone https://github.com/dina-kvivesen/semester-project-2.git
 
       password: Pass1234
 
-3. To run the project install [live server]([https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer]) (Example in VS Code):
+3. To run the project install [live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) (Example in VS Code):
 
 4. open index.html with live server. Log in credentials is the same as the Strapi project credentials
 
