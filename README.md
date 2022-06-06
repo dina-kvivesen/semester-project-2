@@ -24,7 +24,8 @@ Bergen Shoes is an e-commerce website that has both customer-facing and admin se
 git clone https://github.com/dina-kvivesen/semester-project-2.git
 ```
 2. The Strapi project needs to run locally in the background. It can be found [here](https://github.com/NoroffFEU/strapi-sp2)
-Install the npm dependencies and then run the commands below:
+
+Run the commands below:
 ```
 npm install npm run develop
 ```
