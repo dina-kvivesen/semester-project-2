@@ -20,14 +20,15 @@ Bergen Shoes is an e-commerce website that has both customer-facing and admin se
 
 ### Installing
 1. Clone the repo:
+```
 git clone https://github.com/dina-kvivesen/semester-project-2.git
-
+```
 2. The Strapi project needs to run locally in the background. It can be found [here]([url](https://github.com/NoroffFEU/strapi-sp2)).
 Install the npm dependencies and then run npm run develop:
-
-- npm install npm run develop
-
-- User credentials
+```
+npm install npm run develop
+```
+User credentials
 email: admin@admin.com
 username: admin
 password: Pass1234
@@ -38,5 +39,5 @@ password: Pass1234
 
 ## Contact
 
-([My LinkedIn](https://www.linkedin.com/in/dina-kvivesen-7ab5141b4/))
+[My LinkedIn](https://www.linkedin.com/in/dina-kvivesen-7ab5141b4/)
 
