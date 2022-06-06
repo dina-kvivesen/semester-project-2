@@ -1,3 +1,7 @@
+
+<img width="1097" alt="Skjermbilde 2022-06-06 kl  19 20 58" src="https://user-images.githubusercontent.com/71272716/172212802-4f225460-cae8-454f-9115-4ed998bac453.png">
+
+
 Goal
 To create an e-commerce website that has both customer-facing and admin sections. Both sections should be responsive and the website will be populated by a Strapi API supplied by Noroff.
 
